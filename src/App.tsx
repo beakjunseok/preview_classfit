@@ -361,7 +361,7 @@ export default function App() {
 
     lines.push('층별 안내:');
     JUNGSAN_CAMPUS_FLOORS.forEach((floor) => {
-      lines.push(`- ${floor.label} ${floor.subLabel}: ${floor.rooms.join(', ')} (${floor.features.join(', ')})`);
+      lines.push(`- ${floor.label} ${floor.subLabel}: ${floor.rooms.join(', ')} | 안내: ${floor.features.join(', ')}`);
     });
 
     if (session?.role === 'teacher') {

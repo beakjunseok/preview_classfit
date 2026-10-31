@@ -62,7 +62,7 @@ function field(line: string, index: number): string {
 function findRoomReply(compact: string, context: string): string | null {
   const floorLines = context.split('\n').filter((line) => /^- \d층 /.test(line));
   for (const line of floorLines) {
-    const match = line.match(/^- (\d층) [^:]*: (.*) \((.*)\)$/);
+    const match = line.match(/^- (\d층) [^:]*: (.*) \| 안내: (.*)$/);
     if (!match) continue;
     const [, floor, roomText, features] = match;
     const room = roomText.split(', ').find((name) => compact.includes(name.replace(/\s/g, '')));
