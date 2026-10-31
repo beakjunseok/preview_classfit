@@ -18,7 +18,7 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoggedIn }) => {
         <div className="text-center space-y-2">
           <JungsanLogo size={48} className="mx-auto" />
           <h1 className="text-xl font-bold text-slate-900">수행알리미 체험하기</h1>
-          <p className="text-sm text-slate-500">로그인 없이 바로 체험합니다. 가짜 데이터만 넣어 주세요.</p>
+          <p className="text-sm text-slate-500">로그인 없이 바로 체험합니다. 가짜 데이터만 넣어 주세요. 이 체험 사이트에는 Gemini가 연결되어 있지 않아, AI 비서 자리의 로봇은 간단한 질문만 답할 수 있습니다.</p>
         </div>
 
         <button

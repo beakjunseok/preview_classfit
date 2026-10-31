@@ -85,7 +85,7 @@ export const AgentAssistant: React.FC<AgentAssistantProps> = ({ token, suggestio
           <div ref={logRef} className="flex-1 overflow-y-auto p-3 space-y-2 text-sm" aria-live="polite">
             {messages.length === 0 && (
               <div className="space-y-2">
-                <p className="text-slate-600">수행평가, 시간표, 준비물을 물어보거나 화면을 열어 달라고 말해 보세요.</p>
+                <p className="text-slate-600">체험 사이트에는 Gemini 대신 로봇이 들어 있어 간단한 질문만 답할 수 있습니다. 가장 급한 수행평가, 준비물, 시간표를 물어보세요.</p>
                 {suggestions.map((suggestion) => (
                   <button
                     key={suggestion}
