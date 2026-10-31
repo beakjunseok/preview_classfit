@@ -77,7 +77,7 @@ function buildAgentReply(text: string, context: string) {
     };
   }
   if (/시간표/.test(compact)) {
-    return { reply: '시간표를 열었습니다.', actions: [{ name: 'open_screen', args: { screen: 'timetable' } }] };
+    return { reply: '', actions: [{ name: 'open_screen', args: { screen: 'timetable' } }] };
   }
   if (/급한|가까운|다음|언제|수행|평가/.test(compact)) {
     const next = upcoming[0];
