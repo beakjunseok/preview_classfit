@@ -104,6 +104,7 @@ export default async function handler(req, res) {
     res.status(200).json({ total: subscriptions.length, sent, removed });
   } catch (err) {
     console.error('Daily push failed', err);
-    res.status(500).json({ error: '알림을 보내지 못했습니다.' });
+    // CRON_SECRET으로 인증된 요청에만 원인을 알려 준다.
+    res.status(500).json({ error: '알림을 보내지 못했습니다.', detail: String(err.message).slice(0, 200) });
   }
 }
