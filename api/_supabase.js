@@ -8,11 +8,15 @@ export async function supabaseRequest(path, init = {}) {
     ...init,
     headers: {
       apikey: key,
-      Authorization: `Bearer ${key}`,
+      // sb_secret_ 형식의 새 키는 Authorization에 넣으면 거부된다.
+      ...(key.startsWith('eyJ') ? { Authorization: `Bearer ${key}` } : {}),
       'Content-Type': 'application/json',
       ...init.headers,
     },
   });
-  if (!response.ok) throw new Error(`Supabase request failed: ${response.status}`);
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`Supabase request failed: ${response.status} ${detail.slice(0, 200)}`);
+  }
   return response;
 }
